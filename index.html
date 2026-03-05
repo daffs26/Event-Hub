@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EventHub — Platform Event Terbaik</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#" onclick="showPage('home')">Event<span>Hub</span></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span  class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link nav-page active" href="#" data-page="home" onclick="showPage('home')">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link nav-page" href="#" data-page="list" onclick="showPage('list')">Event</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Tentang</a></li>
+        <li class="nav-item ms-2"><a class="nav-link btn-nav" href="#" onclick="showPage('form')">Daftar Sekarang</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+>
+<div id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container position-relative" style="z-index:1;">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="hero-badge"><i class="fas fa-star me-1"  style="color: red;"> </i> Platform Event #1 di Indonesia</div>
+          <h1>Temukan & Ikuti <span>Event</span> Terbaik Untuk Kamu</h1>
+          <p>Ribuan event menarik menunggu kamu — seminar, konser, workshop, dan banyak lagi. Daftar sekarang, rasakan pengalaman yang tak terlupakan.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#" class="btn-primary-custom" onclick="showPage('list')"><i class="fas fa-search me-2"></i>Jelajahi Event</a>
+            <a href="#" class="btn-outline-custom" onclick="showPage('form')">Buat Event <i class="fas fa-arrow-right ms-2"></i></a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item"><h3>500+</h3><p>Event Aktif</p></div>
+            <div class="stat-item"><h3>50K+</h3><p>Peserta</p></div>
+            <div class="stat-item"><h3>200+</h3><p>Penyelenggara</p></div>
+          </div>
+        </div>
+        
+        <div class="col-lg-5 offset-lg-1 d-none d-lg-block">
+          <div class="hero-image-wrapper">
+            <div class="hero-card-float">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="event-dot" style="background:#e94560;"></span>
+                <small style="color:rgba(255,255,255,0.6);font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;">Live Now</small>
+              </div>
+              <div style="font-weight:600;font-size:0.95rem;">🎵 Jazz Night Jakarta 2025</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:0.3rem;">423 orang mendaftar hari ini</div>
+            </div>
+            <div class="hero-card-float">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="event-dot" style="background:#c9a84c;"></span>
+                <small style="color:rgba(255,255,255,0.6);font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;">Trending</small>
+              </div>
+              <div style="font-weight:600;font-size:0.95rem;">💼 Tech Summit Indonesia 2025</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:0.3rem;">Tiket tersisa 47 dari 500</div>
+            </div>
+            <div class="hero-card-float">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="event-dot" style="background:#27ae60;"></span>
+                <small style="color:rgba(255,255,255,0.6);font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;">Gratis</small>
+              </div>
+              <div style="font-weight:600;font-size:0.95rem;">🎨 Workshop UI/UX Design</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:0.3rem;">Pendaftaran dibuka sampai 20 Des</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED EVENTS -->
+  <section class="events-section">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-5 fade-up flex-wrap gap-3">
+        <div>
+          <span class="section-label">Jangan Sampai Ketinggalan</span>
+          <h2 class="section-title mb-0">Event <span>Pilihan</span> Minggu Ini</h2>
+        </div>
+        <a href="#" class="btn-primary-custom" style="padding:0.65rem 1.5rem;font-size:0.88rem;" onclick="showPage('list')">Lihat Semua <i class="fas fa-arrow-right ms-1"></i></a>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="event-card">
+            <div class="event-card-img" style="background:linear-gradient(135deg,#1a1a2e,#e94560);">
+              <span class="event-icon">🎵</span>
+              <span class="event-badge">Musik</span>
+              <span class="event-price-badge">Rp 150K</span>
+            </div>
+            <div class="event-card-body">
+              <h5>Jazz Night Jakarta 2025</h5>
+              <div class="event-meta">
+                <div class="event-meta-item"><i class="fas fa-calendar"></i> Sabtu, 20 Desember 2025</div>
+                <div class="event-meta-item"><i class="fas fa-clock"></i> 19:00 - 23:00 WIB</div>
+                <div class="event-meta-item"><i class="fas fa-map-marker-alt"></i> GBK Arena, Jakarta</div>
+              </div>
+            </div>
+            <div class="event-card-footer">
+              <a href="#" class="btn-detail" onclick="showPage('detail')">Lihat Detail</a>
+              <span class="seats-left"><span>47</span> tiket tersisa</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="event-card">
+            <div class="event-card-img" style="background:linear-gradient(135deg,#0f3460,#c9a84c);">
+              <span class="event-icon">💼</span>
+              <span class="event-badge">Bisnis</span>
+              <span class="event-price-badge">Rp 250K</span>
+            </div>
+            <div class="event-card-body">
+              <h5>Tech Summit Indonesia 2025</h5>
+              <div class="event-meta">
+                <div class="event-meta-item"><i class="fas fa-calendar"></i> Minggu, 22 Desember 2025</div>
+                <div class="event-meta-item"><i class="fas fa-clock"></i> 08:00 - 17:00 WIB</div>
+                <div class="event-meta-item"><i class="fas fa-map-marker-alt"></i> ICE BSD, Tangerang</div>
+              </div>
+            </div>
+            <div class="event-card-footer">
+              <a href="#" class="btn-detail" onclick="showPage('detail')">Lihat Detail</a>
+              <span class="seats-left"><span>120</span> tiket tersisa</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="event-card">
+            <div class="event-card-img" style="background:linear-gradient(135deg,#1a1a2e,#27ae60);">
+              <span class="event-icon">🎨</span>
+              <span class="event-badge" style="background:#27ae60;">Gratis</span>
+              <span class="event-price-badge" style="color:#27ae60;">FREE</span>
+            </div>
+            <div class="event-card-body">
+              <h5>Workshop UI/UX Design untuk Pemula</h5>
+              <div class="event-meta">
+                <div class="event-meta-item"><i class="fas fa-calendar"></i> Sabtu, 28 Desember 2025</div>
+                <div class="event-meta-item"><i class="fas fa-clock"></i> 13:00 - 16:00 WIB</div>
+                <div class="event-meta-item"><i class="fas fa-map-marker-alt"></i> Online (Zoom)</div>
+              </div>
+            </div>
+            <div class="event-card-footer">
+              <a href="#" class="btn-detail" onclick="showPage('detail')">Lihat Detail</a>
+              <span class="seats-left"><span>200</span> tiket tersisa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="features-section">
+    <div class="container">
+      <div class="text-center mb-5 fade-up">
+        <span class="section-label">Mengapa EventHub?</span>
+        <h2 class="section-title">Semua Yang Kamu Butuhkan <span>Ada Di Sini</span></h2>
+        <p class="text-muted" style="max-width:500px;margin:0 auto;font-size:0.93rem;">Platform lengkap untuk menemukan, mendaftar, dan mengelola event dengan mudah dan cepat.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-search"></i></div>
+            <h5>Temukan Event Impian</h5>
+            <p>Cari ribuan event berdasarkan kategori, lokasi, tanggal, atau harga sesuai kebutuhanmu.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-ticket-alt"></i></div>
+            <h5>Tiket Digital Instan</h5>
+            <p>Dapatkan tiket QR code langsung di email setelah pembayaran — tidak perlu antre.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+            <h5>Pembayaran Aman</h5>
+            <p>Berbagai metode pembayaran tersedia dengan sistem keamanan berlapis yang terpercaya.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-bell"></i></div>
+            <h5>Notifikasi Otomatis</h5>
+            <p>Pengingat otomatis sebelum event dimulai agar kamu tidak pernah ketinggalan.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+            <h5>Dashboard Penyelenggara</h5>
+            <p>Kelola eventmu, pantau pendaftaran, dan lihat statistik secara real-time.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-qrcode"></i></div>
+            <h5>Check-in QR Code</h5>
+            <p>Proses check-in peserta lebih cepat dengan scan QR code di pintu masuk.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container position-relative" style="z-index:1;">
+      <div class="fade-up">
+        <h2>Siap Menghadiri Event Impianmu?</h2>
+        <p>Bergabung bersama 50.000+ peserta yang telah mempercayai EventHub</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="#" class="btn-primary-custom" onclick="showPage('list')">Jelajahi Event Sekarang</a>
+          <a href="#" class="btn-outline-custom" onclick="showPage('form')">Buat Event Gratis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end page-home -->
+
+
+<div id="page-list" style="display:none;">
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Semua <span style="color:var(--accent);">Event</span></h1>
+      <p style="margin-bottom:10; margin-top: 10; color:rgba(255,255,255,0.7);" >Temukan event yang sesuai dengan minat dan jadwalmu</p>
+    </div>
+  </section>
+
+  <section style="padding:3rem 0 5rem;background:var(--light);">
+    <div class="container">
+
+      <!-- FILTER BAR -->
+      <div class="filter-bar">
+        <div class="row g-3 align-items-end">
+          <div class="col-md-4">
+            <label class="form-label" style="font-size:0.8rem;font-weight:600;color:var(--primary);">Cari Event</label>
+            <div class="input-group">
+              <span class="input-group-text" style="background:#fff;border:1.5px solid var(--border);border-right:0;"><i class="fas fa-search" style="color:var(--muted);font-size:0.85rem;"></i></span>
+              <input type="text" id="search-input" class="form-control" placeholder="Nama event, artis, topik..." style="border-left:0;" />
+            </div>
+          </div>
+          <div class="col-md-2">
+            <label class="form-label" style="font-size:0.8rem;font-weight:600;color:var(--primary);">Kategori</label>
+            <select class="form-select" id="category-filter">
+              <option value="">Semua</option>
+              <option value="musik">Musik</option>
+              <option value="bisnis">Bisnis & Tech</option>
+              <option value="workshop">Workshop</option>
+              <option value="olahraga">Olahraga</option>
+              <option value="sosial">Sosial</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label class="form-label" style="font-size:0.8rem;font-weight:600;color:var(--primary);">Lokasi</label>
+            <select class="form-select">
+              <option value="">Semua Kota</option>
+              <option>Jakarta</option>
+              <option>Bandung</option>
+              <option>Surabaya</option>
+              <option>Online</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label class="form-label" style="font-size:0.8rem;font-weight:600;color:var(--primary);">Urutkan</label>
+            <select class="form-select" id="sort-filter">
+              <option>Terbaru</option>
+              <option>Termurah</option>
+              <option>Terpopuler</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <button class="btn-filter w-100"><i class="fas fa-filter me-2"></i>Filter</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <p class="results-info mb-0">Menampilkan <span id="results-count">6</span> event</p>
+      </div>
+
+      <!-- EVENT GRID -->
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4 event-card-wrapper" data-title="jazz night jakarta 2025" data-category="musik">
+          <div class="event-card">
+            <div class="event-card-img" style="background:linear-gradient(135deg,#1a1a2e,#e94560);">
+              <span class="event-icon">🎵</span>
+              <span class="event-badge">Musik</span>
+              <span class="event-price-badge">Rp 150K</span>
+            </div>
+            <div class="event-card-body">
+              <h5>Jazz Night Jakarta 2025</h5>
+              <div class="event-meta">
+                <div class="event-meta-item"><i class="fas fa-calendar"></i> Sabtu, 20 Des 2025</div>
+                <div class="event-meta-item"><i class="fas fa-clock"></i> 19:00 - 23:00 WIB</div>
+                <div class="event-meta-item"><i class="fas fa-map-marker-alt"></i> GBK Arena, Jakarta</div>
+              </div>
+            </div>
+            <div class="event-card-footer">
+              <a href="#" class="btn-detail" onclick="showPage('detail')">Lihat Detail</a>
+              <span class="seats-left"><span>47</span> tiket tersisa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 event-card-wrapper" data-title="tech summit indonesia 2025" data-category="bisnis">
+          <div class="event-card">
+            <div class="event-card-img" style="background:linear-gradient(135deg,#0f3460,#c9a84c);">
+              <span class="event-icon">💼</span>
+              <span class="event-badge">Bisnis</span>
+              <span class="event-price-badge">Rp 250K</span>
+            </div>
+            <div class="event-card-body">
+              <h5>Tech Summit Indonesia 2025</h5>
+              <div class="event-meta">
+                <div class="event-meta-item"><i class="fas fa-calendar"></i> Minggu, 22 Des 2025</div>
+                <div class="event-meta-item"><i class="fas fa-clock"></i> 08:00 - 17:00 WIB</div>
+                <div class="event-meta-item"><i class="fas fa-map-marker-alt"></i> ICE BSD, Tangerang</div>
+              </div>
+            </div>
+            <div class="event-card-footer">
+              <a href="#" class="btn-detail" onclick="showPage('detail')">Lihat Detail</a>
+              <span class="seats-left"><span>120</span> tiket tersisa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 event-card-wrapper" data-title="workshop ui ux design" data-category="workshop">
+          <div class="event-card">
+            <div class="event-card-img" style="background:linear-gradient(135deg,#1a1a2e,#27ae60);">
+              <span class="event-icon">🎨</span>
+              <span class="event-badge" style="background:#27ae60;">Gratis</span>
+              <span class="event-price-badge" style="color:#27ae60;">FREE</span>
+            </div>
+            <div class="event-card-body">
+              <h5>Workshop UI/UX Design untuk Pemula</h5>
+              <div class="event-meta">
+                <div class="event-meta-item"><i class="fas fa-calendar"></i> Sabtu, 28 Des 2025</div>
+                <div class="event-meta-item"><i class="fas fa-clock"></i> 13:00 - 16:00 WIB</div>
+                <div class="event-meta-item"><i class="fas fa-map-marker-alt"></i> Online (Zoom)</div>
+              </div>
+            </div>
+            <div class="event-card-footer">
+              <a href="#" class="btn-detail" onclick="showPage('detail')">Lihat Detail</a>
+              <span class="seats-left"><span>200</span> tiket tersisa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 event-card-wrapper" data-title="bandung marathon 2026" data-category="olahraga">
+          <div class="event-card">
+            <div class="event-card-img" style="background:linear-gradient(135deg,#1a1a2e,#3498db);">
+              <span class="event-icon">🏃</span>
+              <span class="event-badge" style="background:#3498db;">Olahraga</span>
+              <span class="event-price-badge">Rp 100K</span>
+            </div>
+            <div class="event-card-body">
+              <h5>Bandung Marathon 2026</h5>
+              <div class="event-meta">
+                <div class="event-meta-item"><i class="fas fa-calendar"></i> Minggu, 5 Jan 2026</div>
+                <div class="event-meta-item"><i class="fas fa-clock"></i> 05:00 - 12:00 WIB</div>
+                <div class="event-meta-item"><i class="fas fa-map-marker-alt"></i> Lapangan Gasibu, Bandung</div>
+              </div>
+            </div>
+            <div class="event-card-footer">
+              <a href="#" class="btn-detail" onclick="showPage('detail')">Lihat Detail</a>
+              <span class="seats-left"><span>350</span> tiket tersisa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 event-card-wrapper" data-title="seminar kewirausahaan muda" data-category="bisnis">
+          <div class="event-card">
+            <div class="event-card-img" style="background:linear-gradient(135deg,#0f3460,#8e44ad);">
+              <span class="event-icon">🚀</span>
+              <span class="event-badge">Seminar</span>
+              <span class="event-price-badge">Rp 75K</span>
+            </div>
+            <div class="event-card-body">
+              <h5>Seminar Kewirausahaan Muda Indonesia</h5>
+              <div class="event-meta">
+                <div class="event-meta-item"><i class="fas fa-calendar"></i> Sabtu, 11 Jan 2026</div>
+                <div class="event-meta-item"><i class="fas fa-clock"></i> 09:00 - 15:00 WIB</div>
+                <div class="event-meta-item"><i class="fas fa-map-marker-alt"></i> Hotel Santika, Surabaya</div>
+              </div>
+            </div>
+            <div class="event-card-footer">
+              <a href="#" class="btn-detail" onclick="showPage('detail')">Lihat Detail</a>
+              <span class="seats-left"><span>85</span> tiket tersisa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 event-card-wrapper" data-title="festival kuliner nusantara" data-category="sosial">
+          <div class="event-card">
+            <div class="event-card-img" style="background:linear-gradient(135deg,#c0392b,#e67e22);">
+              <span class="event-icon">🍜</span>
+              <span class="event-badge" style="background:#e67e22;">Kuliner</span>
+              <span class="event-price-badge">Rp 50K</span>
+            </div>
+            <div class="event-card-body">
+              <h5>Festival Kuliner Nusantara 2026</h5>
+              <div class="event-meta">
+                <div class="event-meta-item"><i class="fas fa-calendar"></i> 17–19 Jan 2026</div>
+                <div class="event-meta-item"><i class="fas fa-clock"></i> 10:00 - 22:00 WIB</div>
+                <div class="event-meta-item"><i class="fas fa-map-marker-alt"></i> Alun-alun Selatan, Jogja</div>
+              </div>
+            </div>
+            <div class="event-card-footer">
+              <a href="#" class="btn-detail" onclick="showPage('detail')">Lihat Detail</a>
+              <span class="seats-left"><span>500+</span> tiket tersisa</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PAGINATION -->
+      <nav class="d-flex justify-content-center mt-5">
+        <ul class="pagination">
+          <li class="page-item disabled"><a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </section>
+
+</div><!-- end page-list -->
+
+
+<div id="page-detail" style="display:none;">
+
+  <section class="detail-header">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb" style="font-size:0.82rem;">
+          <li class="breadcrumb-item"><a href="#" style="color:rgba(255,255,255,0.5);text-decoration:none;" onclick="showPage('home')">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="#" style="color:rgba(255,255,255,0.5);text-decoration:none;" onclick="showPage('list')">Event</a></li>
+          <li class="breadcrumb-item active" style="color:rgba(255,255,255,0.8);">Jazz Night Jakarta</li>
+        </ol>
+      </nav>
+      <span class="event-category">🎵 Musik</span>
+      <h1>Jazz Night Jakarta 2025</h1>
+      <div class="detail-meta-bar">
+        <div class="detail-meta-item"><i class="fas fa-calendar"></i> Sabtu, 20 Desember 2025</div>
+        <div class="detail-meta-item"><i class="fas fa-clock"></i> 19:00 - 23:00 WIB</div>
+        <div class="detail-meta-item"><i class="fas fa-map-marker-alt"></i> GBK Arena, Jakarta Selatan</div>
+        <div class="detail-meta-item"><i class="fas fa-users"></i> 500 Kapasitas</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-content" style="background:var(--light);">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-lg-8">
+
+          <div class="detail-card">
+            <h4><i class="fas fa-info-circle me-2" style="color:var(--accent);"></i>Tentang Event</h4>
+            <p>Jazz Night Jakarta 2025 adalah malam jazz paling ditunggu-tunggu di ibu kota. Hadirkan pengalaman musik jazz kelas dunia dengan penampilan dari musisi ternama Indonesia dan tamu spesial dari mancanegara.</p>
+            <p style="margin-top:1rem;">Nikmati malam yang penuh harmoni di bawah bintang, dengan alunan musik yang memanjakan telinga. Acara ini cocok untuk semua kalangan — baik pecinta jazz sejati maupun yang baru mengenal genre ini.</p>
+            <p style="margin-top:1rem;">Tersedia area VIP dengan akses eksklusif ke lounge premium, meet & greet dengan artis, serta merchandise edisi terbatas.</p>
+          </div>
+
+          <div class="detail-card">
+            <h4><i class="fas fa-microphone me-2" style="color:var(--accent);"></i>Lineup Artis</h4>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div style="background:var(--light);border-radius:10px;padding:1rem;display:flex;gap:1rem;align-items:center;border:1px solid var(--border);">
+                  <div style="width:48px;height:48px;background:var(--gradient);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;">🎷</div>
+                  <div><div style="font-weight:600;font-size:0.92rem;">Dwiki Dharmawan</div><div style="font-size:0.78rem;color:var(--muted);">Headliner</div></div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div style="background:var(--light);border-radius:10px;padding:1rem;display:flex;gap:1rem;align-items:center;border:1px solid var(--border);">
+                  <div style="width:48px;height:48px;background:linear-gradient(135deg,#c9a84c,#e67e22);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;">🎹</div>
+                  <div><div style="font-weight:600;font-size:0.92rem;">Sandy Winarta</div><div style="font-size:0.78rem;color:var(--muted);">Special Guest</div></div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div style="background:var(--light);border-radius:10px;padding:1rem;display:flex;gap:1rem;align-items:center;border:1px solid var(--border);">
+                  <div style="width:48px;height:48px;background:linear-gradient(135deg,#27ae60,#2980b9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;">🎸</div>
+                  <div><div style="font-weight:600;font-size:0.92rem;">The Jazz Collective</div><div style="font-size:0.78rem;color:var(--muted);">Opening Act</div></div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div style="background:var(--light);border-radius:10px;padding:1rem;display:flex;gap:1rem;align-items:center;border:1px solid var(--border);">
+                  <div style="width:48px;height:48px;background:linear-gradient(135deg,#8e44ad,#c0392b);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;">🥁</div>
+                  <div><div style="font-weight:600;font-size:0.92rem;">Yuri Mahatma</div><div style="font-size:0.78rem;color:var(--muted);">Opening Act</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <h4><i class="fas fa-list-alt me-2" style="color:var(--accent);"></i>Rundown Acara</h4>
+            <div style="position:relative;padding-left:1.5rem;">
+              <div style="position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--border);"></div>
+              <div style="margin-bottom:1.5rem;position:relative;">
+                <div style="position:absolute;left:-1.85rem;top:2px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 2px var(--accent);"></div>
+                <div style="font-weight:600;font-size:0.88rem;">19:00 WIB</div>
+                <div style="font-size:0.85rem;color:var(--muted);">Pintu masuk dibuka, registrasi & check-in peserta</div>
+              </div>
+              <div style="margin-bottom:1.5rem;position:relative;">
+                <div style="position:absolute;left:-1.85rem;top:2px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 2px var(--accent);"></div>
+                <div style="font-weight:600;font-size:0.88rem;">19:30 WIB</div>
+                <div style="font-size:0.85rem;color:var(--muted);">Opening Act: The Jazz Collective & Yuri Mahatma</div>
+              </div>
+              <div style="margin-bottom:1.5rem;position:relative;">
+                <div style="position:absolute;left:-1.85rem;top:2px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid #fff;box-shadow:0 0 0 2px var(--gold);"></div>
+                <div style="font-weight:600;font-size:0.88rem;">20:30 WIB</div>
+                <div style="font-size:0.85rem;color:var(--muted);">Sandy Winarta — Special Guest Performance</div>
+              </div>
+              <div style="position:relative;">
+                <div style="position:absolute;left:-1.85rem;top:2px;width:12px;height:12px;border-radius:50%;background:var(--primary);border:2px solid #fff;box-shadow:0 0 0 2px var(--primary);"></div>
+                <div style="font-weight:600;font-size:0.88rem;">21:30 WIB</div>
+                <div style="font-size:0.85rem;color:var(--muted);">Headliner: Dwiki Dharmawan — Grand Finale</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <h4><i class="fas fa-map-marker-alt me-2" style="color:var(--accent);"></i>Lokasi</h4>
+            <div style="background:var(--light);border-radius:10px;padding:1rem;border:1px solid var(--border);margin-bottom:1rem;">
+              <div style="font-weight:600;">GBK Arena</div>
+              <div style="font-size:0.88rem;color:var(--muted);margin-top:0.3rem;">Jl. Pintu Satu Senayan, Gelora, Tanah Abang, Jakarta Pusat 10270</div>
+            </div>
+            <div style="background:#e8eaf0;border-radius:10px;height:180px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.88rem;">
+              <div class="text-center"><i class="fas fa-map" style="font-size:2rem;margin-bottom:0.5rem;display:block;"></i>Google Maps Preview</div>
+            </div>
+          </div>
+
+        </div><!-- col-lg-8 -->
+
+        <div class="col-lg-4">
+          <div class="ticket-box">
+            <h4>Pilih Tiket</h4>
+            <div class="ticket-type selected" data-price="150000">
+              <div class="d-flex justify-content-between align-items-start">
+                <div><div class="ticket-name">Regular</div><div class="ticket-desc">Akses area umum, standing</div></div>
+                <div class="ticket-price">Rp 150K</div>
+              </div>
+            </div>
+            <div class="ticket-type" data-price="300000">
+              <div class="d-flex justify-content-between align-items-start">
+                <div><div class="ticket-name">VIP</div><div class="ticket-desc">Akses lounge premium + seated</div></div>
+                <div class="ticket-price">Rp 300K</div>
+              </div>
+            </div>
+            <div class="ticket-type" data-price="500000">
+              <div class="d-flex justify-content-between align-items-start">
+                <div><div class="ticket-name">VVIP</div><div class="ticket-desc">Meet & greet + exclusive merch</div></div>
+                <div class="ticket-price">Rp 500K</div>
+              </div>
+            </div>
+            <div style="margin-top:1.5rem;">
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">Jumlah Tiket</div>
+              <div class="ticket-qty">
+                <button class="qty-btn" id="qty-minus"><i class="fas fa-minus"></i></button>
+                <div class="qty-display" id="qty-display">1</div>
+                <button class="qty-btn" id="qty-plus"><i class="fas fa-plus"></i></button>
+                <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);">maks. 10</div>
+              </div>
+            </div>
+            <div class="total-price">
+              <span class="label">Total Pembayaran</span>
+              <span class="amount" id="total-price">Rp 150.000</span>
+            </div>
+            <a href="#" class="btn-register" onclick="showPage('form')">
+              <i class="fas fa-ticket-alt me-2"></i>Beli Tiket Sekarang
+            </a>
+            <div style="text-align:center;margin-top:1rem;font-size:0.78rem;color:rgba(255,255,255,0.35);">
+              <i class="fas fa-shield-alt me-1"></i> Pembayaran aman & terenkripsi
+            </div>
+          </div>
+
+          <div style="background:#fff;border-radius:12px;padding:1.2rem;border:1px solid var(--border);margin-top:1rem;">
+            <div style="font-size:0.85rem;font-weight:600;color:var(--primary);margin-bottom:0.8rem;">Bagikan Event Ini</div>
+            <div class="d-flex gap-2">
+              <button style="flex:1;background:#1877f2;color:#fff;border:none;padding:0.5rem;border-radius:8px;font-size:0.8rem;"><i class="fab fa-facebook-f me-1"></i>Facebook</button>
+              <button style="flex:1;background:#1da1f2;color:#fff;border:none;padding:0.5rem;border-radius:8px;font-size:0.8rem;"><i class="fab fa-twitter me-1"></i>Twitter</button>
+              <button style="flex:1;background:#25d366;color:#fff;border:none;padding:0.5rem;border-radius:8px;font-size:0.8rem;"><i class="fab fa-whatsapp me-1"></i>WA</button>
+            </div>
+          </div>
+
+          <div style="background:#fff;border-radius:12px;padding:1.2rem;border:1px solid var(--border);margin-top:1rem;">
+            <div style="font-size:0.85rem;font-weight:600;color:var(--primary);margin-bottom:0.8rem;">Penyelenggara</div>
+            <div style="display:flex;gap:0.8rem;align-items:center;">
+              <div style="width:44px;height:44px;background:var(--gradient);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:'Playfair Display',serif;">M</div>
+              <div>
+                <div style="font-weight:600;font-size:0.9rem;">Musica Live Events</div>
+                <div style="font-size:0.78rem;color:var(--muted);">27 Event Diselenggarakan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div><!-- end page-detail -->
+
+
+<!-- ================================================================ -->
+<!-- PAGE: FORM REGISTRASI                                             -->
+<!-- ================================================================ -->
+<div id="page-form" style="display:none;">
+
+  <section class="form-section">
+    <div class="container">
+
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb" style="font-size:0.82rem;">
+          <li class="breadcrumb-item"><a href="#" style="color:var(--muted);text-decoration:none;" onclick="showPage('home')">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="#" style="color:var(--muted);text-decoration:none;" onclick="showPage('list')">Event</a></li>
+          <li class="breadcrumb-item"><a href="#" style="color:var(--muted);text-decoration:none;" onclick="showPage('detail')">Jazz Night Jakarta</a></li>
+          <li class="breadcrumb-item active" style="color:var(--primary);">Registrasi</li>
+        </ol>
+      </nav>
+
+      <div class="form-wrapper">
+        <div class="row g-0">
+
+          <!-- SIDEBAR -->
+          <div class="col-lg-4">
+            <div class="form-sidebar">
+              <h3>Selesaikan Pemesanan</h3>
+              <p>Isi data diri dengan benar. Tiket akan dikirim ke email setelah pembayaran berhasil.</p>
+              <hr class="sidebar-divider" />
+              <div class="sidebar-event-info">
+                <div class="label">Nama Event</div>
+                <div class="value">Jazz Night Jakarta 2025</div>
+              </div>
+              <div class="sidebar-event-info">
+                <div class="label">Tanggal & Waktu</div>
+                <div class="value">Sabtu, 20 Des 2025 · 19:00 WIB</div>
+              </div>
+              <div class="sidebar-event-info">
+                <div class="label">Lokasi</div>
+                <div class="value">GBK Arena, Jakarta Selatan</div>
+              </div>
+              <div class="sidebar-event-info">
+                <div class="label">Penyelenggara</div>
+                <div class="value">Musica Live Events</div>
+              </div>
+              <hr class="sidebar-divider" />
+              <div class="step-list">
+                <div style="font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem;">Langkah Pendaftaran</div>
+                <div class="step-item active"><div class="step-circle">1</div><span>Data Diri</span></div>
+                <div class="step-item active"><div class="step-circle">2</div><span>Pilih Tiket</span></div>
+                <div class="step-item"><div class="step-circle">3</div><span>Pembayaran</span></div>
+                <div class="step-item"><div class="step-circle">4</div><span>Konfirmasi</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FORM MAIN -->
+          <div class="col-lg-8">
+            <div class="form-main">
+              <h4>Data Diri Peserta</h4>
+              <p class="subtitle">Pastikan data yang diisi sudah benar dan sesuai identitas resmi</p>
+
+              <form id="registration-form">
+                <div class="form-row">
+                  <div class="form-group-custom">
+                    <label class="form-label-custom">Nama Lengkap <span style="color:var(--accent);">*</span></label>
+                    <input type="text" id="full-name" class="form-control-custom" placeholder="Sesuai KTP / Paspor" />
+                  </div>
+                  <div class="form-group-custom">
+                    <label class="form-label-custom">Nomor HP <span style="color:var(--accent);">*</span></label>
+                    <input type="tel" id="phone" class="form-control-custom" placeholder="+62 8xx xxxx xxxx" />
+                  </div>
+                </div>
+
+                <div class="form-group-custom">
+                  <label class="form-label-custom">Email Aktif <span style="color:var(--accent);">*</span></label>
+                  <input type="email" id="email" class="form-control-custom" placeholder="tiket akan dikirim ke email ini" />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group-custom">
+                    <label class="form-label-custom">Tanggal Lahir</label>
+                    <input type="date" class="form-control-custom" />
+                  </div>
+                  <div class="form-group-custom">
+                    <label class="form-label-custom">Jenis Kelamin</label>
+                    <select class="form-control-custom">
+                      <option value="">Pilih...</option>
+                      <option>Laki-laki</option>
+                      <option>Perempuan</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group-custom">
+                  <label class="form-label-custom">Kota Asal</label>
+                  <input type="text" class="form-control-custom" placeholder="Contoh: Jakarta, Bandung, Surabaya" />
+                </div>
+
+                <hr class="form-divider" />
+
+                <h5 style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:0.3rem;">Pilih Tipe Tiket <span style="color:var(--accent);">*</span></h5>
+                <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem;">Pilih satu tipe tiket yang sesuai kebutuhanmu</p>
+
+                <div class="ticket-select-card selected" data-price="150000">
+                  <input type="radio" name="ticket" value="regular" checked />
+                  <div><div class="ticket-select-name">Regular</div><div class="ticket-select-desc">Akses area umum — standing zone</div></div>
+                  <div class="ticket-select-price">Rp 150.000</div>
+                </div>
+                <div class="ticket-select-card" data-price="300000">
+                  <input type="radio" name="ticket" value="vip" />
+                  <div><div class="ticket-select-name">VIP</div><div class="ticket-select-desc">Lounge premium + seated area</div></div>
+                  <div class="ticket-select-price">Rp 300.000</div>
+                </div>
+                <div class="ticket-select-card" data-price="500000">
+                  <input type="radio" name="ticket" value="vvip" />
+                  <div><div class="ticket-select-name">VVIP</div><div class="ticket-select-desc">Meet & greet + exclusive merchandise</div></div>
+                  <div class="ticket-select-price">Rp 500.000</div>
+                </div>
+
+                <hr class="form-divider" />
+
+                <h5 style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:0.3rem;">Metode Pembayaran</h5>
+                <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem;">Pilih metode yang paling mudah untukmu</p>
+                <div class="form-group-custom">
+                  <select class="form-control-custom">
+                    <option>Transfer Bank — BCA</option>
+                    <option>Transfer Bank — Mandiri</option>
+                    <option>GoPay</option>
+                    <option>OVO</option>
+                    <option>DANA</option>
+                    <option>ShopeePay</option>
+                    <option>Kartu Kredit / Debit</option>
+                    <option>QRIS</option>
+                  </select>
+                </div>
+
+                <hr class="form-divider" />
+
+                <h5 style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:1rem;">Ringkasan Pesanan</h5>
+                <div class="order-summary">
+                  <div class="order-row">
+                    <span>Jazz Night Jakarta 2025 — Regular</span>
+                    <span id="summary-subtotal">Rp 150.000</span>
+                  </div>
+                  <div class="order-row">
+                    <span>Biaya Admin (5%)</span>
+                    <span id="summary-admin">Rp 7.500</span>
+                  </div>
+                  <div class="order-row total">
+                    <span>Total Pembayaran</span>
+                    <span id="summary-total">Rp 157.500</span>
+                  </div>
+                </div>
+
+                <div class="form-check-custom mb-4">
+                  <input type="checkbox" id="agree-terms" required />
+                  <label for="agree-terms">Saya setuju dengan <a href="#">Syarat & Ketentuan</a> serta <a href="#">Kebijakan Privasi</a> EventHub. Tiket yang sudah dibeli tidak dapat dikembalikan.</label>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                  <i class="fas fa-lock me-2"></i>Bayar & Konfirmasi Tiket
+                </button>
+
+                <div style="text-align:center;margin-top:1rem;font-size:0.78rem;color:var(--muted);">
+                  <i class="fas fa-shield-alt me-1" style="color:var(--accent);"></i>
+                  Pembayaran diproses secara aman. Data kamu terlindungi.
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end page-form -->
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="footer-brand">Event<span>Hub</span></div>
+        <p>Platform manajemen event terlengkap di Indonesia. Temukan pengalaman yang tak terlupakan bersama kami.</p>
+      </div>
+      <div class="col-md-2 offset-md-1">
+        <h6>Platform</h6>
+        <ul>
+          <li><a href="#" onclick="showPage('list')">Semua Event</a></li>
+          <li><a href="#" onclick="showPage('form')">Buat Event</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h6>Kategori</h6>
+        <ul>
+          <li><a href="#">Musik & Hiburan</a></li>
+          <li><a href="#">Bisnis & Tech</a></li>
+          <li><a href="#">Workshop</a></li>
+          <li><a href="#">Olahraga</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6>Kontak</h6>
+        <ul>
+          <li><a href="#"><i class="fas fa-envelope me-2"></i>daffaaulia254@gmail.com</a></li>
+          <li><a href="#"><i class="fas fa-phone me-2"></i>+62 813 1986 0862</a></li>
+          <li><a href="#"><i class="fab fa-instagram me-2"></i>daffs_26</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <span>© 2026 <span>Project Gabut Daffa</span>
+    </div>
+  </div>
+</footer>
+
+<!-- SUCCESS MODAL -->
+<div class="modal fade" id="successModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:20px;border:none;padding:1rem;">
+      <div class="modal-body text-center py-4">
+        <div class="success-icon"><i class="fas fa-check"></i></div>
+        <h4 style="font-size:1.4rem;margin-bottom:0.5rem;">Registrasi Berhasil!</h4>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">Tiket kamu sudah dikirim ke email. Tunjukkan QR code saat check-in di lokasi event.</p>
+        <div style="background:var(--light);border-radius:12px;padding:1.2rem;margin-bottom:1.5rem;border:1px solid var(--border);">
+          <div style="font-size:0.78rem;color:var(--muted);margin-bottom:0.3rem;">Kode Booking</div>
+          <div style="font-size:1.4rem;font-weight:700;font-family:'Playfair Display',serif;letter-spacing:3px;color:var(--primary);">EH-2025-8472</div>
+        </div>
+        <div class="d-flex gap-2 justify-content-center">
+          <a href="#" class="btn-primary-custom" style="font-size:0.88rem;padding:0.65rem 1.4rem;" onclick="showPage('home');bootstrap.Modal.getInstance(document.getElementById('successModal')).hide()">Kembali ke Beranda</a>
+          <button class="btn-outline-custom" style="font-size:0.88rem;padding:0.65rem 1.4rem;color:var(--primary);border-color:var(--border);" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
